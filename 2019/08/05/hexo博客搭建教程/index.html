@@ -10,7 +10,7 @@
     
     
     
-    <title>search | Annabelle-艾猫猫的个人博客</title>
+    <title>hexo博客搭建教程 | Annabelle-艾猫猫的个人博客</title>
     <link href="”http://huangwenni.github.io“" rel="”prefetch”">
 
     <link rel="shortcut icon" href="/imgs/favicon.ico">
@@ -161,215 +161,149 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <!-- 搜索页面(尽可能接近ZanBlog搜索功能) -->
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://huangwenni.github.io">Annabelle-艾猫猫的个人博客</a>
+        >
+        <span>hexo博客搭建教程</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/08/05/hexo博客搭建教程/">hexo博客搭建教程</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-08-05
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/08/05/hexo博客搭建教程/">hexo博客搭建教程</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-08-05
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p><strong>（以下的操作皆在已安装了git和nodejs的条件下进行。）</strong></p>
+<p>①安装hexo</p>
+<ul>
+<li><p>1、创建一个文件夹，例如blog。</p>
+</li>
+<li><p>2、在文件夹下右键，点击Git Bash Here。</p>
+</li>
+<li><p>3、安装hexo,输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4、查看版本，检查是否安装成功：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo –v</span><br></pre></td></tr></table></figure>
 
-<!-- search自定义页面 -->
-<script type="text/javascript">
+</li>
+</ul>
+<p><img src="//huangwenni.github.io/2019/08/05/hexo博客搭建教程/9.png" alt="9.png"></p>
+<p>②创建hexo</p>
+<ul>
+<li>1、初始化博客<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
 
-	var htmlEntityMap = {
-		'&': '&amp;',
-		'<': '&lt;',
-		'>': '&gt;',
-		'"': '&quot;',
-		'\'': '&#39;',
-		'/': '&#x2F;'
-	};
+</li>
+</ul>
+<p><img src="//huangwenni.github.io/2019/08/05/hexo博客搭建教程/10.png" alt="10.png"></p>
+<ul>
+<li>2、在你所创建的文件夹下，安装依赖包，输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
 
-	// 参照hexo过滤html的方法(事实上感觉静态也没什么可以过滤的)
-	function escapeKey(str) {
-		if (typeof str !== 'string') throw new TypeError('str must be a string!');
+</li>
+</ul>
+<p>③生成本地站点</p>
+<ul>
+<li>1、生成文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
 
-		// http://stackoverflow.com/a/12034334
-		return str.replace(/[&<>"'\/]/g, function(a) {
-			return htmlEntityMap[a];
-		});
-	}
+</li>
+</ul>
+<p><img src="//huangwenni.github.io/2019/08/05/hexo博客搭建教程/11.png" alt="11.png"></p>
+<ul>
+<li>2、启动服务<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 
-	var query = decodeURIComponent(window.location.search).substring(1).split('&')
-    // 获取搜索关键词
-    var s = escapeKey(query[0].split('=')[1])
-    // 获取当前页数
-    var p = query.length > 1 ? query[1].split('=')[1] : 1
-    // 获取每页的页码数
-    var pageSize = '10'
-    var useLeancloud = ''
-    var useComment = ('false' === 'true')
-    $.getJSON('/content.json', function (json) {
-      $('#search-breadcrumb').append(`搜索'${s}'的结果`)
-      var result = getArticles(s, 'posts', json).concat(getArticles(s, 'pages', json))
-      if (result.length === 0 || result.length <= (p - 1) * pageSize) {
-      	// TODO 显示404页面
-      } else {
-        displaySearchResult(result.slice((p - 1) * pageSize, p * pageSize))
-        displayPagination(result)
-      }
-    })
+</li>
+</ul>
+<p><img src="//huangwenni.github.io/2019/08/05/hexo博客搭建教程/12.png" alt="12.png"></p>
+<p>④部署GitHub</p>
+<ul>
+<li><p>1、在github中创建一个与用户名名字相同的仓库名，名称后面要加<code>.github.io</code>。</p>
+</li>
+<li><p>2、回到Git Bash Here中，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot;</span><br><span class="line">git config --global user.email &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3、检查是否输入正确：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4、创建SSH，一路回车，生成.ssh文件夹，找到该文件夹（id_rsa是这台电脑的私人秘钥，id_rsa.pub是公共秘钥。）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5、在GitHub的setting中 – 点击SSH keys –点击SSH and GPG keys –点击New SSH key，将id_rsa.pub里面的信息复制到GitHub的SSH key中，点击Add SSH key。</p>
+</li>
+<li><p>6、输入ssh –T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>检验是否成功。</p>
+</li>
+<li><p>7、安装部署命令，安装后才能使用部署命令部署到GitHub：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
-    function getArticles(val, type, json) {
-      return json[type].filter((e) => {
-        return e.title.indexOf(val) !== -1 || e.text.indexOf(val) !== -1
-      })
-    }
+</li>
+</ul>
+<p>⑤ 命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
-    function displaySearchResult(result) {
-      var resultList = $('#article-list')
-      result.forEach(function (article) {
-      	var [month, day] = article.date.split('-')
-        ''
-        ''
-        var defaultPreview = '/imgs/preview/preview2.jpg'
-        var preview = article.preview ? article.preview : defaultPreview
-        var path = '/' + article.path
-        resultList.append(`<div class="article well clearfix article-body article-excerpt" data-aos="flip-up">
-                                <div class="data-article hidden-xs">
-                                    <span class="month">${month}月</span>
-                                    <span class="day">${day}</span>
-                                </div>
-                                <section class="hidden-xs">
-                                    <div class="title-article">
-                                        <h1>
-                                            <a href="${path}">
-                                                <span>${article.title}</span>
-                                            </a>
-                                        </h1>
-                                    </div>
-                                    <div class="tag-article">
-                                    ${ article.tags.length > 0 ? `<span class="label label-gal"><i class="fa fa-tags"></i>${
-                                    	article.tags.map(function (tag) {
-						                 return `<a href=${ tag.permalink }>${ tag.name }</a>`
-                                    	}).join(', ') }</span>` : '' }
-                                    ${ useLeancloud ? '<span class="label label-gal"><i class="fa fa-eye"></i></span>' : ''}
-                                    </div>
-                                    <div class="alert alert-gal article-body content-article">
-                                         <div class="item">
-                                            <a href="${path}">
-                                                <div class="img">
-                                                    <img src="${preview}" alt="${article.title}">
-                                                </div>
-                                                <div class="info">
-                                                    <p>${article.excerpt}</p>
-                                                </div>
-                                            </a>
-                                         </div>
-					                </div>
-					            </section>
-                           </div>`)
-      })
-      if (useLeancloud) {
-        var Counter = AV.Object.extend('Counter')
-        showPostsTime(Counter)
-      }
-      if (useComment) {
-      	showCommentCount()
-      }
-    }
+<ul>
+<li><p>hexo clean：清除缓存文件(db.json)，和已经生成的静态文件(public)。</p>
+</li>
+<li><p>hexo g：生成静态文件，每次改动之后都需要执行这个命令。</p>
+</li>
+<li><p>hexo d：部署命令。</p>
+</li>
+</ul>
+<p>⑥hexo应用和修改主题</p>
+<ul>
+<li>1、开源的hexo主题<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Themes | Hexo</a></li>
+<li>2、在博客所在的目录，克隆主题，解压，将解压后的文件放到themes中。</li>
+<li>3、打开_config.yml文件，配置站点，将主题修改为gal（我这里选的主题是gal）。</li>
+</ul>
+<p><img src="//huangwenni.github.io/2019/08/05/hexo博客搭建教程/13.png" alt="13.png"></p>
+<ul>
+<li><p>4、部署到服务器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g –d</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5、启动本地服务器，用于预览主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 
-    function displayPagination(result) {
-      var pgContainer = $('#gal-pagination')
-      var pg = $(pgContainer.find('.pagination-gal')[0])
-      if(result.length > 0) {
-        pgContainer.css('display', 'block')
-      }
-      var num = Math.ceil(result.length / pageSize)
-      var root = '/search'
-      var link = root + `/index.html?s=${s}`
-      if(p > 1) {
-      	pg.append(`<li class="prev"><a href="${link}&page=${p-1}">«</a></li>`)
-      }
-      if(p > 7) {
-      	pg.append(`<li><a href="${link}">1</a></li>
-                   <li><span>...</span></li>`)
-        for(var i = p - 3; i < p; i++) {
-          pg.append(`<li><a href="${link}&page=${i}">${i}</a></li>`)
-        }
-      } else {
-      	for(var j = 1; j < p; j++) {
-          pg.append(`<li><a href="${link}${j === 1 ? '' : `&page=${j}`}">${j}</a></li>`)
-        }
-      }
-      pg.append(`<li class="current"><span>${p}</span></li>`)
-      if(p + 7 < num) {
-      	for(var i = p + 1; i <= p + 3; i++) {
-          pg.append(`<li><a href="${link}&page=${i}">${i}</a></li>`)
-        }
-        pg.append(`<li><span>...</span></li>`)
-      } else {
-      	for(var j = p + 1; j <= num; j++) {
-          pg.append(`<li><a href="${link}&page=${j}">${j}</a></li>`)
-        }
-      }
-      if(p < num) {
-      	pg.append(`<li class="next"><a href="${link}&page=${p+1}">»</a></li>`)
-      }
-    }
+</li>
+</ul>
+<p><strong>注意</strong></p>
+<ul>
+<li>1、在目录下的<code>_config.yml</code>配置站点。<ul>
+<li><code>:</code>之后必须添加一个空格再写内容，否则会报错。</li>
+</ul>
+</li>
+<li>2、安装的主题可能有一些配置要求，具体要求要看配置说明。</li>
+</ul>
 
-    function showPostsTime(Counter) {
-      var entries = []
-      var excerpts = $('.article-excerpt')
-      excerpts.each(function () {
-        entries.push($(this).find('.title-article').first().find('a').attr('href').trim())
-      })
-      var query = new AV.Query(Counter)
-      query.containedIn('url', entries)
-      query.find().then(function (result) {
-        excerpts.each(function () {
-          var href = $(this).find('.title-article').first().find('a').attr('href').trim()
-          var r = result.filter(function (e) {
-            return e.get('url') === href
-          })
-          if(r.length > 0) {
-            $(this).find('i.fa-eye').each(function () {
-              $(this).after(' ' + r[0].get('time') + ' ℃')
-            })
-          } else {
-            $(this).find('i.fa-eye').each(function () {
-              $(this).after(' 0 ℃')
-            })
-          }
-        })
-      }).then(function (error) {
-        console.log('Error:' + error.code + ' ' + error.message)
-      })
-    }
+    </div>
+</article>
 
-    function showCommentCount() {
-      const excerpts = $('.article-excerpt')
-      const owner = window.commentConfig.owner
-      const repo = window.commentConfig.repo
-      $.ajax({
-        url: "https://api.github.com/repos/" + owner + '/' + repo + '/issues',
-        data: {
-          creator: owner
-        }
-      }).done(function(issues) {
-        excerpts.each(function () {
-          const that = $(this)
-          that.find('h1 > a > span').each(function () {
-            const title = $(this).text()
-            const tags = that.find('div.tag-article')
-            const issue = issues.filter(function (issue) {
-              return issue.title === title
-            })
-            const comments = issue.length > 0 ? issue[0].comments : 0
-            tags.each(function () {
-              $(this).append('<span class="label label-gal"><i class="fa fa-comments"></i><a> ' + comments + '</a></span>')
-            })
-          })
-        })
-      }).fail(function (error) {
-        console.log(error)
-      });
-    }
-
-</script>
-<div class="breadcrumb breadcrumb-gal" id="search-breadcrumb">
-    <i class="fa fa-home"></i>
-</div>
-<div id="article-list"></div>
-<div id="gal-pagination" class="clearfix" style="display: none;">
-    <ul class="pagination pagination-gal pull-right"></ul>
-</div>
-<!-- 404页面 -->
 
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
@@ -536,17 +470,17 @@
 
                 
                 <li>
-                    <a href="/search/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/08/05/hexo博客搭建教程/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/search/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">链接收藏</a>
+                    <a href="/2019/08/05/hexo博客搭建教程/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">链接收藏</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/search/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/08/05/hexo博客搭建教程/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
