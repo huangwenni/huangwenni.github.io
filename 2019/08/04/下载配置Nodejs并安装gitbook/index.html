@@ -10,7 +10,7 @@
     
     
     
-    <title>categories | Annabelle-艾猫猫的个人博客</title>
+    <title>下载配置Node.js并安装gitbook | Annabelle-艾猫猫的个人博客</title>
     <link href="”http://huangwenni.github.io“" rel="”prefetch”">
 
     <link rel="shortcut icon" href="/imgs/favicon.ico">
@@ -203,21 +203,38 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <!-- 搜索页面(尽可能接近ZanBlog搜索功能) -->
-
-
+                    
 <article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://huangwenni.github.io">Annabelle-艾猫猫的个人博客</a>
+        >
+        <span>下载配置Node.js并安装gitbook</span>
+    </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/categories/index.html">categories</a>
+                <a href="/2019/08/04/下载配置Nodejs并安装gitbook/">下载配置Node.js并安装gitbook</a>
             </h1>
         </div>
         <div class="tag-article">
+            
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2019-08-05
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/前端/">前端</a>, 
+                
+                <a href="/tags/nodejs/">nodejs</a>, 
+                
+                <a href="/tags/gitbook/">gitbook</a>
+                
             </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-08-04
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -225,19 +242,78 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/categories/index.html">categories</a>
+                    <a href="/2019/08/04/下载配置Nodejs并安装gitbook/">下载配置Node.js并安装gitbook</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2019-08-05
+                <i class="fa fa-calendar"></i> 2019-08-04
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/前端/">前端</a>, 
+                
+                <a href="/tags/nodejs/">nodejs</a>, 
+                
+                <a href="/tags/gitbook/">gitbook</a>
+                
+                
+                
             </p>
         </center>
     </div>
     <div class="content-article">
-        
+        <h3 id="下载Node-js并配置"><a href="#下载Node-js并配置" class="headerlink" title="下载Node.js并配置"></a>下载Node.js并配置</h3><h4 id="在官网上下载Node-js"><a href="#在官网上下载Node-js" class="headerlink" title="在官网上下载Node.js"></a>在官网上下载Node.js</h4><p>一、下载地址<br><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Download | Node.js</a></p>
+<p>二、检验是否成功</p>
+<p>打开cmd，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node  -v</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm –v</span><br></pre></td></tr></table></figure>
+
+<p>若是安装成功会出现版本信息：</p>
+<p><img src="//huangwenni.github.io/2019/08/04/下载配置Nodejs并安装gitbook/1.png" alt="1.png"></p>
+<h4 id="使用前的准备工作"><a href="#使用前的准备工作" class="headerlink" title="使用前的准备工作"></a>使用前的准备工作</h4><p>一、在安装目录下创建两个文件夹node_global和node_cache，主要防止执行其他安装命令时候将东西安装在C盘里面，希望将全模块所在路径和缓存路径放在我node.js安装的文件夹中。</p>
+<p>二、设置环境变量</p>
+<p>①设置用户变量</p>
+<p>给用户变量Path的值添加一条<code>D:\Node.js\node_global</code>，如果没有Path，可以点击下方的新建，新建一个。</p>
+<p><img src="//huangwenni.github.io/2019/08/04/下载配置Nodejs并安装gitbook/1.1.png" alt="1.1.png"></p>
+<p>②设置系统变量</p>
+<p>给系统变量添加变量NODE_PATH，值为：<code>D:\Node.js\node_modules</code>。</p>
+<p><img src="//huangwenni.github.io/2019/08/04/下载配置Nodejs并安装gitbook/1.2.png" alt="1.2.png"></p>
+<p>三、新建文件后执行下面语句</p>
+<p><img src="//huangwenni.github.io/2019/08/04/下载配置Nodejs并安装gitbook/2.png" alt="2.png"></p>
+<p>接下来执行npm install express –g，可发现node_global中多出了个文件夹。</p>
+<p><img src="//huangwenni.github.io/2019/08/04/下载配置Nodejs并安装gitbook/2.1.png" alt="2.1.png"><br><img src="//huangwenni.github.io/2019/08/04/下载配置Nodejs并安装gitbook/2.2.png" alt="2.2.png"></p>
+<h4 id="安装gitbook"><a href="#安装gitbook" class="headerlink" title="安装gitbook"></a>安装gitbook</h4><p>一、在Node.js安装目录下全局安装gitbook</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd D:\Node.js</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install gitbook-cli –g</span><br></pre></td></tr></table></figure>
+
+<p>二、在Node.js安装目录下输入mkdir mybook 创建文件夹</p>
+<p>三、初始化</p>
+<p>进入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\Node.js\mybook</span><br></pre></td></tr></table></figure>
+
+<p>初始化目录文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook init</span><br></pre></td></tr></table></figure>
+
+<p>成功安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook build</span><br></pre></td></tr></table></figure>
+
+<p>安装完毕后可在mybook下执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook serve</span><br></pre></td></tr></table></figure>
+
+<p>执行完毕后可在<code>http://localhost:4000</code>访问。</p>
+<p><strong>注意：</strong></p>
+<p>以后要在<code>http://localhost:4000</code>进行访问时，都要在mybook目录下执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gitbook init</span><br><span class="line">gitbook serve</span><br></pre></td></tr></table></figure>
+
+<p><strong>相关文章：</strong></p>
+<p><a href>如何将本地的gitbook文件上传到gitbook并访问</a></p>
+
     </div>
 </article>
-
 
 
                 </div>
@@ -408,13 +484,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/08/05/PhotoShop将图片放进字体中/">PhotoShop将图片放进字体中</a>
+                    <a href="/2019/08/08/如何将本地的gitbook文件上传到gitbook并访问/">如何将本地的gitbook文件上传到gitbook并访问</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/08/08/如何将本地的gitbook文件上传到gitbook并访问/">如何将本地的gitbook文件上传到gitbook并访问</a>
+                    <a href="/2019/08/05/常用电脑快捷键/">常用电脑快捷键</a>
                 </span>
             </li>
             
@@ -441,17 +517,17 @@
 
                 
                 <li>
-                    <a href="/categories/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/08/04/下载配置Nodejs并安装gitbook/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/categories/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">链接收藏</a>
+                    <a href="/2019/08/04/下载配置Nodejs并安装gitbook/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">链接收藏</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/categories/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/08/04/下载配置Nodejs并安装gitbook/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -459,25 +535,25 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/PhotoShop/" style="font-size: 13.852605235275334px;" class="tag-cloud-link">PhotoShop</a>
+    <a href="/tags/PhotoShop/" style="font-size: 8.034962664046361px;" class="tag-cloud-link">PhotoShop</a>
     
-    <a href="/tags/Vue/" style="font-size: 11.53438321513397px;" class="tag-cloud-link">Vue</a>
+    <a href="/tags/Vue/" style="font-size: 16.918757023407284px;" class="tag-cloud-link">Vue</a>
     
-    <a href="/tags/前端/" style="font-size: 15.527457310149925px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/前端/" style="font-size: 19.47826426390126px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/hexo/" style="font-size: 9.759650255320345px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 11.204406189973751px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/GitHub/" style="font-size: 12.787732908479981px;" class="tag-cloud-link">GitHub</a>
+    <a href="/tags/GitHub/" style="font-size: 15.51220968460086px;" class="tag-cloud-link">GitHub</a>
     
-    <a href="/tags/WebStorm/" style="font-size: 19.703791539433745px;" class="tag-cloud-link">WebStorm</a>
+    <a href="/tags/WebStorm/" style="font-size: 10.213230420294241px;" class="tag-cloud-link">WebStorm</a>
     
-    <a href="/tags/WebStrom/" style="font-size: 14.655866588783152px;" class="tag-cloud-link">WebStrom</a>
+    <a href="/tags/WebStrom/" style="font-size: 10.940645500658448px;" class="tag-cloud-link">WebStrom</a>
     
-    <a href="/tags/nodejs/" style="font-size: 9.085455665328887px;" class="tag-cloud-link">nodejs</a>
+    <a href="/tags/nodejs/" style="font-size: 13.611075537289938px;" class="tag-cloud-link">nodejs</a>
     
-    <a href="/tags/gitbook/" style="font-size: 19.244458073888453px;" class="tag-cloud-link">gitbook</a>
+    <a href="/tags/gitbook/" style="font-size: 16.043864092917005px;" class="tag-cloud-link">gitbook</a>
     
-    <a href="/tags/计算机/" style="font-size: 18.213831920906635px;" class="tag-cloud-link">计算机</a>
+    <a href="/tags/计算机/" style="font-size: 8.4793312510933px;" class="tag-cloud-link">计算机</a>
     
 </div>
                 
