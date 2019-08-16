@@ -10,7 +10,7 @@
     
     
     
-    <title>archive_a | Sweetkitty-艾猫猫的个人博客</title>
+    <title>git路径更改后修改配置文件问题 | Sweetkitty-艾猫猫的个人博客</title>
     <link href="”http://huangwenni.github.io“" rel="”prefetch”">
 
     <link rel="shortcut icon" href="/imgs/favicon.ico">
@@ -100,7 +100,7 @@
                 
                 
                 
-                <li class="current">
+                <li class="">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -207,19 +207,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-archive">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://huangwenni.github.io">Sweetkitty-艾猫猫的个人博客</a>
         >
-        <span>归档</span>
+        <span>git路径更改后修改配置文件问题</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/archives">归档</a>
+                <a href="/2019/08/14/git路径更改后修改配置文件问题/">git路径更改后修改配置文件问题</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/git/">git</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-08-14
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -227,79 +242,37 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/archives">归档</a>
+                    <a href="/2019/08/14/git路径更改后修改配置文件问题/">git路径更改后修改配置文件问题</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-08-14
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/git/">git</a>
+                
+                
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        
-        
-            <h1 style="font-size: 24px; margin-top: 40px;">2019年</h1>
-            
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-             
-             
-                        <a href="/2019/08/16/设置WebStorm浏览器打开快捷键以及默认浏览器/">设置WebStorm浏览器打开快捷键以及默认浏览器</a>
-                        <br>
-            
-             
-                        <a href="/2019/08/16/WebStorm如何自定义代码快捷键/">WebStorm如何自定义代码快捷键</a>
-                        <br>
-            
-             
-                        <a href="/2019/08/14/git路径更改后修改配置文件问题/">git路径更改后修改配置文件问题</a>
-                        <br>
-            
-             
-                        <a href="/2019/08/08/如何将本地的gitbook文件上传到gitbook并访问/">如何将本地的gitbook文件上传到gitbook并访问</a>
-                        <br>
-            
-             
-                        <a href="/2019/08/06/hexo如何配置站点的tags和categories/">hexo如何配置站点的tags和categories</a>
-                        <br>
-            
-             
-                        <a href="/2019/08/05/PhotoShop制作动图/">PhotoShop制作动图</a>
-                        <br>
-            
-             
-                        <a href="/2019/08/05/PhotoShop将图片放进字体中/">PhotoShop将图片放进字体中</a>
-                        <br>
-            
-             
-                        <a href="/2019/08/05/常用电脑快捷键/">常用电脑快捷键</a>
-                        <br>
-            
-             
-                        <a href="/2019/08/05/Vue的安装/">Vue的安装</a>
-                        <br>
-            
-             
-                        <a href="/2019/08/05/在win7系统下调整磁盘分区/">在win7系统下调整磁盘分区</a>
-                        <br>
-            
-             
-                        <a href="/2019/08/05/hexo博客搭建教程/">hexo博客搭建教程</a>
-                        <br>
-            
-             
-                        <a href="/2019/08/05/GitHub已有项目解决办法/">GitHub已有项目解决办法</a>
-                        <br>
-            
-             
-                        <a href="/2019/08/04/WebStorm和GitHub互传文件/">WebStorm和GitHub互传文件</a>
-                        <br>
-            
-             
-                        <a href="/2019/08/04/下载配置Nodejs并安装gitbook/">下载配置Node.js并安装gitbook</a>
-                        <br>
-            
-                    </div>
-        
+    <div class="content-article">
+        <p><strong>遇到的问题：</strong></p>
+<p>原本我的git是装在E盘的，当我做了磁盘合并后E盘不存在了，再次执行相关程序时报错，提示找不到git。</p>
+<p><img src="//huangwenni.github.io/2019/08/14/git路径更改后修改配置文件问题/1.png" alt="1.png"></p>
+<p><strong>解决方案：</strong></p>
+<p>更改<code>gitconfig</code>配置文件的<code>sslCAIInfo</code>路径为你当前git中ca-bundle.cr所在的路径。</p>
+<p><img src="//huangwenni.github.io/2019/08/14/git路径更改后修改配置文件问题/2.png" alt="2.png"></p>
+<p><img src="//huangwenni.github.io/2019/08/14/git路径更改后修改配置文件问题/3.png" alt="3.png"></p>
+<p><img src="//huangwenni.github.io/2019/08/14/git路径更改后修改配置文件问题/4.png" alt="4.png"></p>
+
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -432,6 +405,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2019/08/05/Vue的安装/">Vue的安装</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/08/05/PhotoShop制作动图/">PhotoShop制作动图</a>
                 </span>
             </li>
@@ -456,7 +435,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/08/14/git路径更改后修改配置文件问题/">git路径更改后修改配置文件问题</a>
+                    <a href="/2019/08/06/hexo如何配置站点的tags和categories/">hexo如何配置站点的tags和categories</a>
                 </span>
             </li>
             
@@ -484,12 +463,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/08/05/常用电脑快捷键/">常用电脑快捷键</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -501,17 +474,17 @@
 
                 
                 <li>
-                    <a href="/archives/2019/page/2/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/08/14/git路径更改后修改配置文件问题/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/archives/2019/page/2/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">链接收藏</a>
+                    <a href="/2019/08/14/git路径更改后修改配置文件问题/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">链接收藏</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/archives/2019/page/2/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/08/14/git路径更改后修改配置文件问题/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -519,27 +492,27 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/WebStrom/" style="font-size: 15.745053300208777px;" class="tag-cloud-link">WebStrom</a>
+    <a href="/tags/WebStrom/" style="font-size: 17.586650316464272px;" class="tag-cloud-link">WebStrom</a>
     
-    <a href="/tags/GitHub/" style="font-size: 9.336471124453478px;" class="tag-cloud-link">GitHub</a>
+    <a href="/tags/GitHub/" style="font-size: 9.32007480455101px;" class="tag-cloud-link">GitHub</a>
     
-    <a href="/tags/Vue/" style="font-size: 11.333136364277742px;" class="tag-cloud-link">Vue</a>
+    <a href="/tags/Vue/" style="font-size: 8.099036020192862px;" class="tag-cloud-link">Vue</a>
     
-    <a href="/tags/前端/" style="font-size: 9.736931332221696px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/前端/" style="font-size: 12.769991187573153px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/PhotoShop/" style="font-size: 12.36273887449057px;" class="tag-cloud-link">PhotoShop</a>
+    <a href="/tags/PhotoShop/" style="font-size: 9.516630371510104px;" class="tag-cloud-link">PhotoShop</a>
     
-    <a href="/tags/WebStorm/" style="font-size: 18.656098940577557px;" class="tag-cloud-link">WebStorm</a>
+    <a href="/tags/WebStorm/" style="font-size: 14.34861130288975px;" class="tag-cloud-link">WebStorm</a>
     
-    <a href="/tags/hexo/" style="font-size: 14.271217799900384px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 9.578940299058907px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/git/" style="font-size: 15.514659871199742px;" class="tag-cloud-link">git</a>
+    <a href="/tags/git/" style="font-size: 8.15061621658381px;" class="tag-cloud-link">git</a>
     
-    <a href="/tags/nodejs/" style="font-size: 13.710467272201072px;" class="tag-cloud-link">nodejs</a>
+    <a href="/tags/nodejs/" style="font-size: 14.473595560136996px;" class="tag-cloud-link">nodejs</a>
     
-    <a href="/tags/gitbook/" style="font-size: 11.788897548232807px;" class="tag-cloud-link">gitbook</a>
+    <a href="/tags/gitbook/" style="font-size: 18.201724468682px;" class="tag-cloud-link">gitbook</a>
     
-    <a href="/tags/计算机/" style="font-size: 19.4654652392631px;" class="tag-cloud-link">计算机</a>
+    <a href="/tags/计算机/" style="font-size: 8.416645423242606px;" class="tag-cloud-link">计算机</a>
     
 </div>
                 
