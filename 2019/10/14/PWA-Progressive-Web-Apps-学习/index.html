@@ -10,7 +10,7 @@
     
     
     
-    <title>tags: Vue | Sweetkitty-艾猫猫的个人博客</title>
+    <title>PWA(Progressive Web Apps)学习 | Sweetkitty-艾猫猫的个人博客</title>
     <link href="”http://huangwenni.github.io“" rel="”prefetch”">
 
     <link rel="shortcut icon" href="/imgs/favicon.ico">
@@ -211,19 +211,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-tag">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://huangwenni.github.io">Sweetkitty-艾猫猫的个人博客</a>
-
-        <span>标签</span>
+        >
+        <span>PWA(Progressive Web Apps)学习</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/tags/Vue/index.html">Vue</a>
+                <a href="/2019/10/14/PWA-Progressive-Web-Apps-学习/">PWA(Progressive Web Apps)学习</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/PWA/">PWA</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-10-14
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -231,21 +246,58 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/tags/Vue/index.html">Vue</a>
+                    <a href="/2019/10/14/PWA-Progressive-Web-Apps-学习/">PWA(Progressive Web Apps)学习</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-10-14
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/PWA/">PWA</a>
+                
+                
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-            <a href="/2019/08/05/Vue的安装/">Vue的安装</a>
-            <br>
-            
-            
-        </div>
+    <div class="content-article">
+        <h4 id="什么是PWA？"><a href="#什么是PWA？" class="headerlink" title="什么是PWA？"></a>什么是PWA？</h4><p>PWA（Progressive Web Apps），中文名为渐进式网页应用。是Google 在2016年提出的概念，2017年落地的web技术。目的就是在移动端利用提供的标准化框架，在网页应用中实现和原生应用相近的用户体验的渐进式网页应用。</p>
+<h4 id="PWA的几个特性"><a href="#PWA的几个特性" class="headerlink" title="PWA的几个特性"></a>PWA的几个特性</h4><p>1、可以被添加到桌面并有它自己的应用图标。</p>
+<p>2、同时，从桌面开启时，会和原生app一样有它自己的“开屏图”。</p>
+<p>3、更进一步的，这个Web App在的样子几乎和原生应用一样——没有浏览器的地址栏、工具条，似乎和Native App一样运行在一个独立的容器中。</p>
+<p>4、可以离线使用。</p>
+<p>5、消息推送。</p>
+<h4 id="PWA关键技术"><a href="#PWA关键技术" class="headerlink" title="PWA关键技术"></a>PWA关键技术</h4><p>Service Worker （可以理解为服务工厂）</p>
+<p>Manifest （应用清单）</p>
+<p>Push Notification（推送通知）</p>
+<h4 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h4><p>本次做了一个小实验通了一下流程。</p>
+<h5 id="第一步：制作PWA图标"><a href="#第一步：制作PWA图标" class="headerlink" title="第一步：制作PWA图标"></a>第一步：制作PWA图标</h5><p>使用<a href="https://www.favicon-generator.org/" target="_blank" rel="noopener">Favicon.ico &amp; App Icon Generator</a>生成几个不同大小的图标以及一些HTML代码，把该网站提供的代码添加到<code>index.html</code>文件的<code>&lt;head&gt;</code>中。</p>
+<p><img src="//huangwenni.github.io/2019/10/14/PWA-Progressive-Web-Apps-学习/1.png" alt="1.png"></p>
+<h5 id="第二步：创建manifest文件"><a href="#第二步：创建manifest文件" class="headerlink" title="第二步：创建manifest文件"></a>第二步：创建manifest文件</h5><p>包含了一个网站的名字、主要颜色以及图标等数据。</p>
+<p>short_name:用户主屏幕上的应用名字。</p>
+<p>display :设置启动样式，让您的网络应用隐藏浏览器的 URL 地址栏。</p>
+<p>start_url :设置启动网址，如果不提供的话，默认是使用当前页面。</p>
+<p>theme_color :用来告知浏览器用什么颜色来为地址栏等 UI 元素着色。</p>
+<p>background_color:设置启动页面的背景颜色。</p>
+<p>icons：就是添加到主屏幕之后的图标。</p>
+<p><img src="//huangwenni.github.io/2019/10/14/PWA-Progressive-Web-Apps-学习/2.png" alt="2.png"></p>
+<h5 id="第三步：添加service-worker"><a href="#第三步：添加service-worker" class="headerlink" title="第三步：添加service worker"></a>第三步：添加service worker</h5><p>什么是service worker呢？有了它，网站就可以在离线状态下运行。它是一段运行在浏览器后台进程里的脚本，可独立于当前页面，提供了那些不需要与web页面交互的功能在网页背后悄悄执行的能力。</p>
+<p>①把以下代码添加到index.html文件的<head><meta name="generator" content="Hexo 3.9.0">当中：</head></p>
+<p>作用：</p>
+<p>从当前页面注册一个新的service worker。</p>
+<p><strong>注意：</strong></p>
+<p>要想支持service worker 的话，在线上必须以https来访问页面，否则的话，浏览器是不支持的，因为http访问会涉及到service worker安全性问题。</p>
+<p><img src="//huangwenni.github.io/2019/10/14/PWA-Progressive-Web-Apps-学习/3.png" alt="3.png"></p>
+<p>显示注册成功：</p>
+<p><img src="//huangwenni.github.io/2019/10/14/PWA-Progressive-Web-Apps-学习/4.png" alt="4.png"></p>
+<h4 id="第四步：新建sw-js文件"><a href="#第四步：新建sw-js文件" class="headerlink" title="第四步：新建sw.js文件"></a>第四步：新建sw.js文件</h4>
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -378,43 +430,37 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/09/13/2019年7-9月份-我喜欢的歌曲（30首）/">2019年7~9月份 我喜欢的歌曲（30首）</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2019/10/14/PWA-Progressive-Web-Apps-学习/">PWA(Progressive Web Apps)学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/09/22/MongoDB安装教程及安装遇到的问题/">MongoDB安装教程及安装遇到的问题</a>
+                    <a href="/2019/08/05/GitHub已有项目解决办法/">GitHub已有项目解决办法</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/08/05/Vue的安装/">Vue的安装</a>
+                    <a href="/2019/08/04/WebStorm和GitHub互传文件/">WebStorm和GitHub互传文件</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/08/16/WebStorm如何自定义代码快捷键/">WebStorm如何自定义代码快捷键</a>
+                    <a href="/2019/08/05/PhotoShop将图片放进字体中/">PhotoShop将图片放进字体中</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/08/05/hexo博客搭建教程/">hexo博客搭建教程</a>
+                    <a href="/2019/08/04/下载配置Nodejs并安装gitbook/">下载配置Node.js并安装gitbook</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/08/06/hexo如何配置站点的tags和categories/">hexo如何配置站点的tags和categories</a>
+                    <a href="/2019/08/08/如何将本地的gitbook文件上传到gitbook并访问/">如何将本地的gitbook文件上传到gitbook并访问</a>
                 </span>
             </li>
             
@@ -436,6 +482,12 @@
                 </span>
             </li>
             
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/16/设置WebStorm浏览器打开快捷键以及默认浏览器/">设置WebStorm浏览器打开快捷键以及默认浏览器</a>
+                </span>
+            </li>
+            
         </ul>
     </div>
 </aside>
@@ -447,17 +499,17 @@
 
                 
                 <li>
-                    <a href="/tags/Vue/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/10/14/PWA-Progressive-Web-Apps-学习/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/tags/Vue/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">链接收藏</a>
+                    <a href="/2019/10/14/PWA-Progressive-Web-Apps-学习/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">链接收藏</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/tags/Vue/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/10/14/PWA-Progressive-Web-Apps-学习/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -465,41 +517,41 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/生活杂记/" style="font-size: 15.74331236457537px;" class="tag-cloud-link">生活杂记</a>
+    <a href="/tags/生活杂记/" style="font-size: 18.558529982829295px;" class="tag-cloud-link">生活杂记</a>
     
-    <a href="/tags/音乐/" style="font-size: 8.133181947897398px;" class="tag-cloud-link">音乐</a>
+    <a href="/tags/音乐/" style="font-size: 8.441318820674299px;" class="tag-cloud-link">音乐</a>
     
-    <a href="/tags/PWA/" style="font-size: 17.807314210290976px;" class="tag-cloud-link">PWA</a>
+    <a href="/tags/PWA/" style="font-size: 17.288922724827447px;" class="tag-cloud-link">PWA</a>
     
-    <a href="/tags/MongoDB/" style="font-size: 16.758017416431475px;" class="tag-cloud-link">MongoDB</a>
+    <a href="/tags/MongoDB/" style="font-size: 9.912946308503805px;" class="tag-cloud-link">MongoDB</a>
     
-    <a href="/tags/WebStrom/" style="font-size: 15.879620919934407px;" class="tag-cloud-link">WebStrom</a>
+    <a href="/tags/WebStrom/" style="font-size: 9.205970810716916px;" class="tag-cloud-link">WebStrom</a>
     
-    <a href="/tags/GitHub/" style="font-size: 11.13148737329408px;" class="tag-cloud-link">GitHub</a>
+    <a href="/tags/GitHub/" style="font-size: 16.35839628482476px;" class="tag-cloud-link">GitHub</a>
     
-    <a href="/tags/PhotoShop/" style="font-size: 17.993782391509658px;" class="tag-cloud-link">PhotoShop</a>
+    <a href="/tags/PhotoShop/" style="font-size: 14.533599448229065px;" class="tag-cloud-link">PhotoShop</a>
     
-    <a href="/tags/Vue/" style="font-size: 8.360028007363137px;" class="tag-cloud-link">Vue</a>
+    <a href="/tags/Vue/" style="font-size: 16.07791417735848px;" class="tag-cloud-link">Vue</a>
     
-    <a href="/tags/前端/" style="font-size: 11.606629665281503px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/前端/" style="font-size: 11.308827533093952px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/WebStorm/" style="font-size: 14.707166615754426px;" class="tag-cloud-link">WebStorm</a>
+    <a href="/tags/WebStorm/" style="font-size: 8.050483519115405px;" class="tag-cloud-link">WebStorm</a>
     
-    <a href="/tags/hexo/" style="font-size: 10.630980922949611px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 17.744283532195904px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/nodejs/" style="font-size: 12.735569087807871px;" class="tag-cloud-link">nodejs</a>
+    <a href="/tags/nodejs/" style="font-size: 11.927989206158681px;" class="tag-cloud-link">nodejs</a>
     
-    <a href="/tags/gitbook/" style="font-size: 9.04018234228349px;" class="tag-cloud-link">gitbook</a>
+    <a href="/tags/gitbook/" style="font-size: 13.395104210257577px;" class="tag-cloud-link">gitbook</a>
     
-    <a href="/tags/计算机/" style="font-size: 12.87645941729522px;" class="tag-cloud-link">计算机</a>
+    <a href="/tags/计算机/" style="font-size: 14.612384706175531px;" class="tag-cloud-link">计算机</a>
     
-    <a href="/tags/Javascript/" style="font-size: 11.530214711219244px;" class="tag-cloud-link">Javascript</a>
+    <a href="/tags/Javascript/" style="font-size: 10.859901216461461px;" class="tag-cloud-link">Javascript</a>
     
-    <a href="/tags/CSS/" style="font-size: 17.864114306572386px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/CSS/" style="font-size: 8.719194857158403px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/jQuery/" style="font-size: 9.415242768809907px;" class="tag-cloud-link">jQuery</a>
+    <a href="/tags/jQuery/" style="font-size: 13.811287988757552px;" class="tag-cloud-link">jQuery</a>
     
-    <a href="/tags/git/" style="font-size: 16.520807732250326px;" class="tag-cloud-link">git</a>
+    <a href="/tags/git/" style="font-size: 11.330529881373524px;" class="tag-cloud-link">git</a>
     
 </div>
                 
