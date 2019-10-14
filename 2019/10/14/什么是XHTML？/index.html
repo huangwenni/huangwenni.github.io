@@ -10,7 +10,7 @@
     
     
     
-    <title>tags: PhotoShop | Sweetkitty-艾猫猫的个人博客</title>
+    <title>什么是XHTML？ | Sweetkitty-艾猫猫的个人博客</title>
     <link href="”http://huangwenni.github.io“" rel="”prefetch”">
 
     <link rel="shortcut icon" href="/imgs/favicon.ico">
@@ -229,19 +229,36 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-tag">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://huangwenni.github.io">Sweetkitty-艾猫猫的个人博客</a>
-
-        <span>标签</span>
+        >
+        <span>什么是XHTML？</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/tags/PhotoShop/index.html">PhotoShop</a>
+                <a href="/2019/10/14/什么是XHTML？/">什么是XHTML？</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/前端/">前端</a>, 
+                
+                <a href="/tags/XHTML/">XHTML</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-10-14
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -249,24 +266,73 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/tags/PhotoShop/index.html">PhotoShop</a>
+                    <a href="/2019/10/14/什么是XHTML？/">什么是XHTML？</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-10-14
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/前端/">前端</a>, 
+                
+                <a href="/tags/XHTML/">XHTML</a>
+                
+                
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-            <a href="/2019/08/05/PhotoShop制作动图/">PhotoShop制作动图</a>
-            <br>
-            
-            <a href="/2019/08/05/PhotoShop将图片放进字体中/">PhotoShop将图片放进字体中</a>
-            <br>
-            
-            
-        </div>
+    <div class="content-article">
+        <p>（本文参考自W3C）</p>
+<h4 id="什么是XHTML？"><a href="#什么是XHTML？" class="headerlink" title="什么是XHTML？"></a>什么是XHTML？</h4><p>XHTML指可扩展超文本标签语言（EXtensible HyperText Markup Language）。</p>
+<p>XHTML是更严谨更纯净的HTML版本。使我们有能力编写出拥有良好结构的文档，这些文档可以很好地工作于所有的浏览器，并且可以向后兼容。</p>
+<h4 id="元素语法"><a href="#元素语法" class="headerlink" title="元素语法"></a>元素语法</h4><p><strong>1、XHTML元素必须被正确地嵌套。</strong></p>
+<p>标签顺序必须正确，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;b&gt;&lt;i&gt;This text is bold and italic&lt;/i&gt;&lt;/b&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>2、XHTML元素必须被关闭。</strong></p>
+<p>非空标签必须使用结束标签。</p>
+<p>空标签也必须使用结束标签，或者其开始标签必须使用<code>/&gt;</code>结尾。</p>
+<p><strong>3、标签名必须用小写字母。</strong></p>
+<p>XHTML规范定义：标签名和属性对大小写敏感。</p>
+<p><strong>4、XHTML文档必须拥有根元素。</strong></p>
+<p>所有的XHTML元素必须被嵌套于<code>&lt;html&gt;</code>根元素中。</p>
+<h4 id="更多的语法规则"><a href="#更多的语法规则" class="headerlink" title="更多的语法规则"></a>更多的语法规则</h4><p><strong>1、属性名称必须小写。</strong></p>
+<p><strong>2、属性值必须加引号。</strong></p>
+<p><strong>3、属性不能简写。</strong></p>
+<p><strong>4、用Id属性代替name属性。</strong></p>
+<p><strong>5、XHTML DTD定义了强制使用的HTML元素。</strong></p>
+<h4 id="强制使用的XHTML元素"><a href="#强制使用的XHTML元素" class="headerlink" title="强制使用的XHTML元素"></a>强制使用的XHTML元素</h4><h5 id="1、XHTML-DOCTYPE"><a href="#1、XHTML-DOCTYPE" class="headerlink" title="1、XHTML DOCTYPE"></a>1、XHTML DOCTYPE</h5><p>定义文件类型声明，存在三种XHTML文档类型：</p>
+<p><strong>STRICT（严格类型）</strong></p>
+<p>严格DTD包含没有被反对使用的或不出现在框架结构中的元素和属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html</span><br><span class="line">PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;</span><br><span class="line">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>TRANSITIONAL（过渡类型）</strong></p>
+<p>过渡DTD包含严格DTD中的一切，外加那些不赞成使用的元素和属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html</span><br><span class="line">PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;</span><br><span class="line">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>FRAMESET（框架类型）</strong></p>
+<p>框架 DTD 包含过渡 DTD 中的一切，外加框架。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html</span><br><span class="line">PUBLIC &quot;-//W3C//DTD XHTML 1.0 Frameset//EN&quot;</span><br><span class="line">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2、-lt-html-gt-中的-XMLnamespace属性（xmlns属性）"><a href="#2、-lt-html-gt-中的-XMLnamespace属性（xmlns属性）" class="headerlink" title="2、&lt;html&gt;中的 XMLnamespace属性（xmlns属性）"></a>2、&lt;html&gt;中的 XMLnamespace属性（xmlns属性）</h5><p>xmlns 属性可以在文档中定义一个或多个可供选择的命名空间。</p>
+<h5 id="3、-lt-html-gt-、-lt-head-gt-、-lt-title-gt-以及-lt-body-gt"><a href="#3、-lt-html-gt-、-lt-head-gt-、-lt-title-gt-以及-lt-body-gt" class="headerlink" title="3、&lt;html&gt;、&lt;head&gt;、&lt;title&gt;以及&lt;body&gt;"></a>3、&lt;html&gt;、&lt;head&gt;、&lt;title&gt;以及&lt;body&gt;</h5><h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>如果你希望将页面验证为正确的XHTML，那么页面中必须含有文件类型声明。</p>
+<p>使用下面的链接根据官方的W3C DTD对所有修改过的页面进行验证:</p>
+<p><a href="http://validator.w3.org/check?uri=referer" target="_blank" rel="noopener">XHTML Validator</a></p>
+
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -399,25 +465,31 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/08/05/GitHub已有项目解决办法/">GitHub已有项目解决办法</a>
+                    <a href="/2019/09/13/2019年7-9月份-我喜欢的歌曲（30首）/">2019年7~9月份 我喜欢的歌曲（30首）</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/09/22/MongoDB安装教程及安装遇到的问题/">MongoDB安装教程及安装遇到的问题</a>
+                    <a href="/2019/08/05/PhotoShop制作动图/">PhotoShop制作动图</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/14/PWA-Progressive-Web-Apps-学习/">PWA(Progressive Web Apps)学习</a>
+                    <a href="/2019/08/05/Vue的安装/">Vue的安装</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2019/08/16/WebStorm如何自定义代码快捷键/">WebStorm如何自定义代码快捷键</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/14/Web语义化/">Web语义化</a>
                 </span>
             </li>
             
@@ -435,7 +507,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/08/04/下载配置Nodejs并安装gitbook/">下载配置Node.js并安装gitbook</a>
+                    <a href="/2019/08/05/hexo博客搭建教程/">hexo博客搭建教程</a>
                 </span>
             </li>
             
@@ -447,13 +519,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/08/05/常用电脑快捷键/">常用电脑快捷键</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/08/21/有趣的每一天/">有趣的每一天</a>
+                    <a href="/2019/08/08/如何将本地的gitbook文件上传到gitbook并访问/">如何将本地的gitbook文件上传到gitbook并访问</a>
                 </span>
             </li>
             
@@ -468,17 +534,17 @@
 
                 
                 <li>
-                    <a href="/tags/PhotoShop/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/10/14/什么是XHTML？/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/tags/PhotoShop/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">链接收藏</a>
+                    <a href="/2019/10/14/什么是XHTML？/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">链接收藏</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/tags/PhotoShop/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/10/14/什么是XHTML？/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -486,47 +552,47 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/WebStrom/" style="font-size: 10.477852975584431px;" class="tag-cloud-link">WebStrom</a>
+    <a href="/tags/WebStrom/" style="font-size: 9.945748242319267px;" class="tag-cloud-link">WebStrom</a>
     
-    <a href="/tags/GitHub/" style="font-size: 9.391978068642157px;" class="tag-cloud-link">GitHub</a>
+    <a href="/tags/GitHub/" style="font-size: 17.89133616209395px;" class="tag-cloud-link">GitHub</a>
     
-    <a href="/tags/生活杂记/" style="font-size: 12.836747388222927px;" class="tag-cloud-link">生活杂记</a>
+    <a href="/tags/生活杂记/" style="font-size: 16.325385241415074px;" class="tag-cloud-link">生活杂记</a>
     
-    <a href="/tags/音乐/" style="font-size: 13.01873583185587px;" class="tag-cloud-link">音乐</a>
+    <a href="/tags/音乐/" style="font-size: 14.699285086424341px;" class="tag-cloud-link">音乐</a>
     
-    <a href="/tags/MongoDB/" style="font-size: 15.196055596920445px;" class="tag-cloud-link">MongoDB</a>
+    <a href="/tags/MongoDB/" style="font-size: 18.358827102768362px;" class="tag-cloud-link">MongoDB</a>
     
-    <a href="/tags/PhotoShop/" style="font-size: 11.456982351206287px;" class="tag-cloud-link">PhotoShop</a>
+    <a href="/tags/PhotoShop/" style="font-size: 18.04329806128077px;" class="tag-cloud-link">PhotoShop</a>
     
-    <a href="/tags/PWA/" style="font-size: 19.110920421998365px;" class="tag-cloud-link">PWA</a>
+    <a href="/tags/PWA/" style="font-size: 12.566390618039446px;" class="tag-cloud-link">PWA</a>
     
-    <a href="/tags/前端/" style="font-size: 17.843977525945228px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/前端/" style="font-size: 8.026915840426446px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/Vue/" style="font-size: 12.144532804165115px;" class="tag-cloud-link">Vue</a>
+    <a href="/tags/Vue/" style="font-size: 9.95556423928618px;" class="tag-cloud-link">Vue</a>
     
-    <a href="/tags/WebStorm/" style="font-size: 16.194001405774085px;" class="tag-cloud-link">WebStorm</a>
+    <a href="/tags/WebStorm/" style="font-size: 9.466356098313137px;" class="tag-cloud-link">WebStorm</a>
     
-    <a href="/tags/HTML/" style="font-size: 13.877438027392891px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/HTML/" style="font-size: 18.5767999903561px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/HTML5/" style="font-size: 10.850995909297136px;" class="tag-cloud-link">HTML5</a>
+    <a href="/tags/HTML5/" style="font-size: 16.485811333428813px;" class="tag-cloud-link">HTML5</a>
     
-    <a href="/tags/git/" style="font-size: 9.608067494580585px;" class="tag-cloud-link">git</a>
+    <a href="/tags/git/" style="font-size: 17.75706811386988px;" class="tag-cloud-link">git</a>
     
-    <a href="/tags/hexo/" style="font-size: 19.057918044212045px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 13.706245023978257px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/nodejs/" style="font-size: 8.762990134200574px;" class="tag-cloud-link">nodejs</a>
+    <a href="/tags/nodejs/" style="font-size: 15.234239698348158px;" class="tag-cloud-link">nodejs</a>
     
-    <a href="/tags/gitbook/" style="font-size: 18.18295917649209px;" class="tag-cloud-link">gitbook</a>
+    <a href="/tags/gitbook/" style="font-size: 19.617834379135623px;" class="tag-cloud-link">gitbook</a>
     
-    <a href="/tags/XHTML/" style="font-size: 10.434780123390855px;" class="tag-cloud-link">XHTML</a>
+    <a href="/tags/XHTML/" style="font-size: 15.030797574856205px;" class="tag-cloud-link">XHTML</a>
     
-    <a href="/tags/计算机/" style="font-size: 13.340282539386061px;" class="tag-cloud-link">计算机</a>
+    <a href="/tags/计算机/" style="font-size: 13.261226570985794px;" class="tag-cloud-link">计算机</a>
     
-    <a href="/tags/Javascript/" style="font-size: 8.057897475092268px;" class="tag-cloud-link">Javascript</a>
+    <a href="/tags/Javascript/" style="font-size: 8.004541838045228px;" class="tag-cloud-link">Javascript</a>
     
-    <a href="/tags/CSS/" style="font-size: 12.703380423084297px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/CSS/" style="font-size: 13.500444081002524px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/jQuery/" style="font-size: 14.651027278548064px;" class="tag-cloud-link">jQuery</a>
+    <a href="/tags/jQuery/" style="font-size: 13.77378327711508px;" class="tag-cloud-link">jQuery</a>
     
 </div>
                 
